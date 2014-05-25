@@ -8,11 +8,12 @@
 * 下载fiddlerconsolesetup.exe，在PC上进行安装
 * 在js代码中引入fc.js文件（支持AMD的方式）
 * 在js中调用fc.log进行打印，如：
-	```javascript
-	/**
-	 * 参数1 - 标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
- 	 * 参数2~n - 要打印的值（字符串或对象）
- 	 */
- 	fc.log('print 1', 'something want to display');
- 	fc.log('print 2', 'something want to display',{name:'aslin', age:'23', job:'code farmer'});
-	```
+	
+```javascript
+/**
+ * 参数1 - 标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
+  * 参数2~n - 要打印的值（字符串或对象）
+  */
+ fc.log('print 1', 'something want to display');
+ fc.log('print 2', 'something want to display',{name:'aslin', age:'23', job:'code farmer'});
+```
