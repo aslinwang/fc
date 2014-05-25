@@ -17,3 +17,4 @@
  fc.log('print 1', 'something want to display');
  fc.log('print 2', 'something want to display',{name:'aslin', age:'23', job:'code farmer'});
 ```
+ * 在fiddler中查看黑色背景、白色前景的session，双击查看返回内容即为打印的结果![session](http://t2.qpic.cn/mblogpic/cf0ed62451b7fb150ede/2000)![response](http://t2.qpic.cn/mblogpic/6c5ac420425012d741d4/2000)
