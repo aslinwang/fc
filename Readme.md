@@ -12,8 +12,8 @@
 ```javascript
 /**
  * 参数1 - 标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
-  * 参数2~n - 要打印的值（字符串或对象）
-  */
+ * 参数2~n - 要打印的值（字符串或对象）
+ */
  fc.log('print 1', 'something want to display');
  fc.log('print 2', 'something want to display',{name:'aslin', age:'23', job:'code farmer'});
 ```
