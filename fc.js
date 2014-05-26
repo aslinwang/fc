@@ -1,6 +1,6 @@
 /**
  * FiddlerConsole - js接口
- * 此文件需要与Fiddler插件FiddlerConsole配合使用（FiddlerConsole插件下载地址：）
+ * 此文件需要与Fiddler插件FiddlerConsole配合使用,项目主页：https://github.com/aslinwang/fc
  * @example
  * 说明：
  *    参数1 - 标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
