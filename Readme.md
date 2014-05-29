@@ -6,7 +6,7 @@
 
 ##用法##
 * 下载[fiddlerconsolesetup.exe](https://github.com/aslinwang/fc/blob/master/fiddlerconsolesetup.exe)，在PC上进行安装
-* 在js代码中引入fc.js文件（支持AMD的方式）
+* 在js代码中引入fc.js文件（支持AMD的方式,可使用此地址：http://mat1.gtimg.com/www/mb/js/lib/fc.js）
 * 在js中调用fc.log进行打印，如：
 	
 ```javascript
