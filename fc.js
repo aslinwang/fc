@@ -3,12 +3,16 @@
  * 此文件需要与Fiddler插件FiddlerConsole配合使用,项目主页：https://github.com/aslinwang/fc
  * @example
  * 说明：
- *    参数1 - 标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
- *    参数2~n - 要打印的值（字符串或对象）
- * fc.log('print 1', 'something want to display');
- * fc.log('print 2', 'something want to display',{name:'aslin', age:'23', job:'code farmer'});
+ *    默认调用——
+ *    参数1~n - 要打印的值（字符串或对象）
+ *    fc.log({a:1,b:2}, 'something string want to display');
+ *
+ *    带标识调用——
+ *    参数1~n-1 - 要打印的值（字符串或对象）
+ *    参数n - {fcflag:'print 1'} "print 1"为fc标识（字符串，可任意填写，便于在fiddler中找到该次打印对应的session） 
+ *    fc.log('something want to display',{name:'aslin', age:'23', job:'code farmer'}, {fcflag:'print 1'});
  * 
- * fc.enable = false//禁用此功能
+ *    fc.enable = false//禁用此功能
  */
 ;
 
@@ -16,6 +20,7 @@ var Fc = (function(){
 	var fc = {};
   var FC_URL = 'http://fiddler.fc.com';//自定义的不存在的域名。应该不存在吧。。
   var enable = true;
+  var Flag_Count = 0;
 
   //ajax实现
   var ajax = (function(){
@@ -99,26 +104,38 @@ var Fc = (function(){
   //解析参数
   var parseargs = function(data){
     var res = [];
-    for(var i = 1; i < data.length; i++){
-      res.push(data[i]);
+    var flag = '';
+
+    for(var i = 0; i < data.length; i++){
+      if(typeof data[i] == 'object' && data[i].fcflag && i == data.length - 1){
+        flag = data[i].fcflag;
+      }
+      else{
+        res.push(data[i]);
+      }
     }
+    if(flag == ''){
+      flag = Flag_Count;
+      Flag_Count++;
+    }
+
     return {
-      'flag' : data[0],
-      'value' : JSON.stringify(res)
-    };
+      flag : flag,
+      value : JSON.stringify(res)
+    }
   };
 
   /**
    * 打印log
    * @example
-   *  fc.log('flag', '1','{name:'aslin',age:23}');//第一个参数为log标识，便于在Fiddler中识别
+   *  fc.log('1','{name:'aslin',age:23}');//第一个参数为log标识，便于在Fiddler中识别
    * @return {[type]} [description]
    */
   fc.log = function(){
     if(!fc.enable){
       return;
     }
-    if(arguments.length < 2){
+    if(arguments.length < 1){
       return;
     }
     var data = parseargs(arguments);
