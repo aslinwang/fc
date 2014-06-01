@@ -1,6 +1,4 @@
-@(前端开发)
 #fc-a Fiddler plugin to display remote log#
-> 此文是fc的[github项目主页](https://github.com/aslinwang/fc)的readme文档
 
 
 * 在移动开发过程中，我们经常使用Fiddler做代理，利用autoResponsder功能，将一些js文件映射到PC本地，在PC上进行开发。
