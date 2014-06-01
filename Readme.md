@@ -1,4 +1,7 @@
+@(前端开发)
 #fc-a Fiddler plugin to display remote log#
+> 此文是fc的[github项目主页](https://github.com/aslinwang/fc)的readme文档
+
 
 * 在移动开发过程中，我们经常使用Fiddler做代理，利用autoResponsder功能，将一些js文件映射到PC本地，在PC上进行开发。
 * 由于移动浏览器的特殊性，无法方便的查看在js代码中利用console.log打印的一些调试信息
@@ -32,3 +35,6 @@
 30 May 2014
 * 解决ajax请求fiddler.fc.com时的跨域报错
 * 优化fc.log的调用方式，弱化fcflag参数
+
+1 June 2014
+* 解决插件升级安装失败的问题

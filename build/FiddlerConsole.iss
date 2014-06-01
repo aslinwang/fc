@@ -1,4 +1,7 @@
-;inno setup file
+; -- Example1.iss --
+; Demonstrates copying 3 files and creating an icon.
+
+; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
 
 [Setup]
 AppName=FiddlerConsole
@@ -10,6 +13,10 @@ DefaultGroupName=FiddlerConsole
 Uninstallable=false
 UsePreviousAppDir=no
 DisableDirPage=true
+
+;delete files before install
+[InstallDelete]
+Type:files;Name:{app}\FiddlerConsole.dll
 
 [Files]
 Source: "FiddlerConsole.dll"; DestDir: "{app}"
